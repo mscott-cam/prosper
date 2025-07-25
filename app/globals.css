@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 9% 97%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 45 9% 97%;
+    --secondary: 35 8% 92%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 35 8% 92%;
+    --muted-foreground: 30 3% 47%;
+    --accent: 35 8% 92%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 9% 97%;
+    --border: 33 8% 87%;
+    --input: 33 8% 87%;
+    --ring: 0 0% 15%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-light;
+    letter-spacing: 0.01em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-cream {
+    background-color: #f8f6ec;
+  }
+  .text-cream {
+    color: #f8f6ec;
+  }
+  .bg-charcoal {
+    background-color: #252525;
+  }
+  .text-charcoal {
+    color: #252525;
+  }
+  .border-cream {
+    border-color: #f8f6ec;
+  }
+  .border-charcoal {
+    border-color: #252525;
+  }
+  .bg-sage {
+    background-color: #c8d4c1;
+  }
+  .text-sage {
+    color: #c8d4c1;
+  }
+  .border-sage {
+    border-color: #c8d4c1;
+  }
+  .font-display {
+    font-family: "Optima", "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  .font-heading {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  .fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+  .stagger-1 {
+    animation-delay: 0.05s;
+  }
+  .stagger-2 {
+    animation-delay: 0.1s;
+  }
+  .stagger-3 {
+    animation-delay: 0.15s;
+  }
+  .stagger-4 {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
