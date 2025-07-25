@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function AboutPage() {
   const founders = [
     {
-      name: "Sarah Martinez",
-      title: "Co-Founder & Botanical Curator",
-      bio: "Sarah brings over a decade of expertise in horticulture and spatial design to every project. Her philosophy centers on creating harmony between plants and their environments, ensuring each installation feels both natural and intentional. She holds advanced degrees in Plant Sciences from UT Austin and has curated botanical installations for some of the city's most prestigious spaces.",
+      name: "Rachel Roberts",
+      title: "Co-Founder",
+      bio: "As the owner and founder of Flourish Plant Shop & Design, Rachel lends her years of design work to Prosper Plantscapes. After working as a plant shop owner, cultivating plant design and a curated aesthetic, she is imparting that into plant design for commercial and residential projects.",
     },
     {
-      name: "Michael Chen",
-      title: "Co-Founder & Design Director",
-      bio: "Michael's background in sustainable design and operations ensures every GreenSpace Austin project reflects our commitment to environmental responsibility and aesthetic excellence. His approach to botanical design emphasizes the importance of creating spaces that support both human well-being and plant health through thoughtful, sustainable practices.",
+      name: "Audrea Straub",
+      title: "Co-Founder",
+      bio: 'Born and raised Austinite, Audrea has been working in the horticulture field for over a decade. Her creativity also shines in creating seasonal floral designs, where she showcases blooms from her very own garden. "Connecting people with plants is my greatest joy, and I love educating clients on how to green up their space. To say I\'m a crazy plant lady is an understatement!"',
     },
   ];
 
@@ -96,10 +96,6 @@ export default function AboutPage() {
             <h2 className="font-heading mb-4 text-3xl font-light text-white">
               The Founders
             </h2>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-300">
-              Meet the visionaries behind Prosper Plantscapes' distinctive
-              approach to botanical design.
-            </p>
           </div>
 
           <div className="grid gap-16 md:grid-cols-2">
@@ -169,7 +165,7 @@ export default function AboutPage() {
                   height={48}
                   className="rounded-2xl object-contain"
                 />
-                <div className="text-charcoal font-display text-xl font-light tracking-[0.2em] underline decoration-2 underline-offset-4">
+                <div className="text-charcoal font-display text-xl font-light tracking-[0.2em]">
                   PROSPER PLANTSCAPES
                 </div>
               </div>
