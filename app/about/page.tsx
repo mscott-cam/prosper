@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Navigation from "@/components/navigation";
 
 export default function AboutPage() {
   const founders = [
@@ -17,63 +18,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-cream min-h-screen">
-      {/* Navigation */}
-      <nav className="px-8 py-8 fade-in">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <Link
-              href="/"
-              className="flex-shrink-0 transform transition-transform duration-200 hover:scale-105"
-            >
-              <Image
-                src="/images/prosper-white-logo.png"
-                alt="Prosper Plantscapes Logo"
-                width={56}
-                height={56}
-                className="rounded-2xl object-contain opacity-80 transition-opacity duration-200 hover:opacity-100"
-              />
-            </Link>
-            <div className="flex space-x-8 text-sm uppercase tracking-widest">
-              <Link
-                href="/services"
-                className="text-charcoal transition-colors hover:text-stone-600"
-              >
-                Services
-              </Link>
-              <Link
-                href="/about"
-                className="text-charcoal transition-colors hover:text-stone-600"
-              >
-                About
-              </Link>
-            </div>
-          </div>
-
-          <div className="absolute left-1/2 -translate-x-1/2 transform">
-            <Link
-              href="/"
-              className="text-charcoal font-display text-3xl font-light tracking-[0.3em]"
-            >
-              PROSPER PLANTSCAPES
-            </Link>
-          </div>
-
-          <div className="flex space-x-8 text-sm uppercase tracking-widest">
-            <Link
-              href="/contact"
-              className="text-charcoal transition-colors hover:text-stone-600"
-            >
-              Contact
-            </Link>
-            <Link
-              href="https://instagram.com/prosperplantscapes"
-              className="text-charcoal transition-colors hover:text-stone-600"
-            >
-              Instagram
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-cream px-8 py-20">
@@ -219,6 +164,8 @@ export default function AboutPage() {
                 <Link
                   href="https://instagram.com/prosperplantscapes"
                   className="hover:text-charcoal block text-sm text-stone-600 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Instagram
                 </Link>
