@@ -269,7 +269,7 @@ export default function HomePage() {
             src="/images/prosper-main-large.jpg"
             alt="Botanical workspace design background"
             fill
-            className="parallax-bg object-cover"
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-black/20"></div>
