@@ -97,7 +97,7 @@ export default function ContactPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-sage slide-up px-8 py-20">
+      <section className="bg-sage px-8 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-charcoal font-heading mb-8 text-4xl font-thin leading-tight tracking-wide md:text-5xl">
             Contact
@@ -232,7 +232,7 @@ export default function ContactPage() {
             <div className="slide-in-right space-y-12">
               <div className="relative h-80 overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/images/sidewalk.jpeg"
                   alt="Prosper Plantscapes studio"
                   fill
                   className="rounded-2xl object-cover"
