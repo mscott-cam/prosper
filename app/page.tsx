@@ -10,19 +10,19 @@ import InstagramFeed from "@/components/instagram-feed";
 const services = [
   {
     title: "Consultation",
-    subtitle: "PERSONALIZED SPACE ASSESSMENT",
+    subtitle: "Personalized space assessment",
     description: "Curated plant collections for modern workspaces",
     image: "/placeholder.svg?height=600&width=400",
   },
   {
     title: "Design",
-    subtitle: "CURATED PLANT SELECTION",
+    subtitle: "Curated plant selection",
     description: "Bespoke plant arrangements for discerning homes",
     image: "/placeholder.svg?height=600&width=400",
   },
   {
     title: "Maintenance",
-    subtitle: "ONGOING PLANT CARE",
+    subtitle: "Ongoing plant care",
     description: "Expert care for lasting botanical beauty",
     image: "/placeholder.svg?height=600&width=400",
   },
@@ -263,15 +263,23 @@ export default function HomePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="hero relative h-screen overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/prosper-main-large.jpg"
-            alt="Botanical workspace design background"
-            fill
-            className="object-cover"
-            priority
-          />
+      <section className="relative h-screen overflow-hidden">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <div className="relative h-full w-full overflow-hidden">
+            <Image
+              src="/images/prosper-main-large.jpg"
+              alt="Botanical workspace design background"
+              fill
+              className="h-full w-full touch-none object-cover"
+              style={{
+                transform: "scale(1)",
+                WebkitTransform: "scale(1)",
+                position: "absolute",
+                touchAction: "none",
+              }}
+              priority
+            />
+          </div>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
         <div className="slide-up absolute bottom-8 left-4 z-10 max-w-2xl md:bottom-16 md:left-8">
@@ -290,13 +298,12 @@ export default function HomePage() {
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-24">
             <div className="order-2 space-y-6 md:order-1">
               <p className="group transform text-base leading-relaxed text-stone-600 transition-all duration-500 hover:text-stone-700 md:text-lg">
-                At{" "}
-                <span className="underline decoration-transparent decoration-2 underline-offset-4 transition-all duration-300 group-hover:decoration-stone-600">
-                  Prosper Plantscapes
+                <span className="text-charcoal mb-4 block text-2xl font-bold md:text-3xl lg:text-4xl">
+                  At Prosper Plantscapes,
                 </span>
-                , we are more than just a plant company. A brand where design,
-                sustainability and functionality all work together to enrich
-                your workplace and lifestyle.
+                we are more than just a plant company. We're a brand where
+                design, sustainability and functionality all work together to
+                enrich your workplace and lifestyle.
                 <br />
                 <br />
                 We have a passion for plants and people, and creating a vibe
@@ -364,22 +371,22 @@ export default function HomePage() {
                 Our expertise and services are catered to your project. We make
                 sure your space is equipped with everything you need.
               </p>
-              <div className="space-y-4 md:space-y-6">
+              <ul className="space-y-3 md:space-y-4">
                 {services.map((service, index) => (
-                  <div
+                  <li
                     key={index}
                     className="transform transition-all duration-300 hover:translate-x-2"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <h3 className="text-charcoal font-heading mb-1 text-base font-medium md:text-lg">
+                    <h6 className="text-charcoal font-heading text-base font-medium md:text-lg">
                       {service.title}
-                    </h3>
-                    <p className="font-heading text-xs uppercase tracking-widest text-stone-500 md:text-sm">
+                    </h6>
+                    <span className="mt-1 block text-sm text-stone-400">
                       {service.subtitle}
-                    </p>
-                  </div>
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <Button
                 variant="outline"
                 className="border-charcoal text-charcoal hover:bg-charcoal group w-full bg-transparent px-6 py-3 text-xs uppercase tracking-wider hover:text-white md:w-auto md:px-8 md:text-sm"

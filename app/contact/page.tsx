@@ -29,7 +29,7 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    >
   ) => {
     setFormData({
       ...formData,
@@ -272,25 +272,25 @@ export default function ContactPage() {
               <div className="space-y-3">
                 <Link
                   href="/"
-                  className="block text-sm text-gray-300 transition-colors hover:text-white"
+                  className="hover:text-cream block text-sm text-white transition-all duration-200 hover:translate-x-1"
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
-                  className="block text-sm text-gray-300 transition-colors hover:text-white"
+                  className="hover:text-cream block text-sm text-white transition-all duration-200 hover:translate-x-1"
                 >
                   About
                 </Link>
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-300 transition-colors hover:text-white"
+                  className="hover:text-cream block text-sm text-white transition-all duration-200 hover:translate-x-1"
                 >
                   Services
                 </Link>
                 <Link
                   href="/contact"
-                  className="block text-sm text-gray-300 transition-colors hover:text-white"
+                  className="hover:text-cream block text-sm text-white transition-all duration-200 hover:translate-x-1"
                 >
                   Contact
                 </Link>

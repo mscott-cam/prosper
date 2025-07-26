@@ -127,25 +127,25 @@ export default function AboutPage() {
               <div className="space-y-3">
                 <Link
                   href="/"
-                  className="hover:text-charcoal block text-sm text-stone-600 transition-colors"
+                  className="hover:text-charcoal block text-sm text-stone-600 transition-all duration-200 hover:translate-x-1"
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
-                  className="hover:text-charcoal block text-sm text-stone-600 transition-colors"
+                  className="hover:text-charcoal block text-sm text-stone-600 transition-all duration-200 hover:translate-x-1"
                 >
                   About
                 </Link>
                 <Link
                   href="/services"
-                  className="hover:text-charcoal block text-sm text-stone-600 transition-colors"
+                  className="hover:text-charcoal block text-sm text-stone-600 transition-all duration-200 hover:translate-x-1"
                 >
                   Services
                 </Link>
                 <Link
                   href="/contact"
-                  className="hover:text-charcoal block text-sm text-stone-600 transition-colors"
+                  className="hover:text-charcoal block text-sm text-stone-600 transition-all duration-200 hover:translate-x-1"
                 >
                   Contact
                 </Link>
