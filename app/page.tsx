@@ -41,24 +41,25 @@ const clientLogos = [
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   // Simple parallax effect for hero only
-  //   const handleScroll = () => {
-  //     const scrolled = window.pageYOffset;
-  //     const parallaxElements = document.querySelectorAll(".parallax-bg");
+  useEffect(() => {
+    // Simple parallax effect for hero only
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll(".parallax-bg");
 
-  //     parallaxElements.forEach((element) => {
-  //       const speed = 0.3;
-  //       element.style.transform = `translateY(${scrolled * speed}px)`;
-  //     });
-  //   };
+      parallaxElements.forEach((element) => {
+        const speed = 0.3;
+        (element as HTMLElement).style.transform =
+          `translateY(${scrolled * speed}px)`;
+      });
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Close mobile menu when clicking outside
   // useEffect(() => {
@@ -105,7 +106,7 @@ export default function HomePage() {
                 alt="Prosper Plantscapes Logo"
                 width={56}
                 height={56}
-                className="rounded-2xl object-contain opacity-80 transition-opacity duration-200 hover:opacity-100"
+                className="opacity-80hover:opacity-100 object-contain"
               />
             </Link>
             <div className="flex space-x-8 text-sm uppercase tracking-widest">
@@ -263,9 +264,9 @@ export default function HomePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-[500px] overflow-hidden lg:h-screen">
         <div className="absolute inset-0 z-0 h-full w-full">
-          <div className="relative h-full w-full overflow-hidden">
+          <div className="parallax-bg relative h-full w-full overflow-hidden">
             <Image
               src="/images/prosper-main-large.jpg"
               alt="Botanical workspace design background"
