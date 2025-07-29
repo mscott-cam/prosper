@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import MobileSidebar from "@/components/mobile-sidebar";
 
 interface NavigationProps {
   variant?: "transparent" | "solid";
@@ -126,81 +127,10 @@ export default function Navigation({ variant = "solid" }: NavigationProps) {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" />
-      )}
-
-      {/* Mobile Menu Sidebar */}
-      <div
-        className={`bg-charcoal mobile-menu fixed right-0 top-0 z-50 h-full w-80 transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="p-6">
-          <div className="mb-8 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Image
-                src="/images/prosper-white-logo.png"
-                alt="Prosper Plantscapes Logo"
-                width={32}
-                height={32}
-                className="rounded-lg object-contain"
-              />
-              <span className="font-display text-sm font-light tracking-wider text-white">
-                PROSPER PLANTSCAPES
-              </span>
-            </div>
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="p-1 text-white transition-colors duration-200 hover:text-white/80"
-              aria-label="Close mobile menu"
-            >
-              <X size={20} />
-            </button>
-          </div>
-
-          <nav className="space-y-6">
-            <Link
-              href="/"
-              className="block text-lg font-light uppercase tracking-wider text-white transition-colors duration-200 hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/services"
-              className="block text-lg font-light uppercase tracking-wider text-white transition-colors duration-200 hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/about"
-              className="block text-lg font-light uppercase tracking-wider text-white transition-colors duration-200 hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="block text-lg font-light uppercase tracking-wider text-white transition-colors duration-200 hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link
-              href="https://instagram.com/prosperplantscapes"
-              className="block text-lg font-light uppercase tracking-wider text-white transition-colors duration-200 hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </Link>
-          </nav>
-        </div>
-      </div>
+      <MobileSidebar
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
     </>
   );
 }
