@@ -200,13 +200,7 @@ export default function HomePage() {
             src="/images/prosper-main-large.jpg"
             alt="Botanical workspace design background"
             fill
-            className="h-full w-full touch-none object-cover"
-            style={{
-              transform: "scale(1)",
-              WebkitTransform: "scale(1)",
-              position: "absolute",
-              touchAction: "none",
-            }}
+            className="h-full w-full max-w-full touch-none object-cover"
             priority
           />
         </div>

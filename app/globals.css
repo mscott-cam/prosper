@@ -32,9 +32,17 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-light;
+    @apply bg-background font-light text-foreground;
     letter-spacing: 0.01em;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
   }
   html {
     scroll-behavior: smooth;
@@ -78,7 +86,13 @@
     letter-spacing: 0.05em;
   }
   .font-heading {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     font-weight: 300;
   }
 }
@@ -107,14 +121,6 @@
   }
   .stagger-4 {
     animation-delay: 0.2s;
-  }
-  
-  /* Fix for mobile viewport height changes */
-  @media (max-width: 768px) {
-    .h-screen {
-      height: 100vh;
-      height: 100dvh; /* Use dynamic viewport height on supported browsers */
-    }
   }
 }
 
