@@ -108,6 +108,14 @@
   .stagger-4 {
     animation-delay: 0.2s;
   }
+  
+  /* Fix for mobile viewport height changes */
+  @media (max-width: 768px) {
+    .h-screen {
+      height: 100vh;
+      height: 100dvh; /* Use dynamic viewport height on supported browsers */
+    }
+  }
 }
 
 @keyframes slideUp {
