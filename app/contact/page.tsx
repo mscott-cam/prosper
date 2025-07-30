@@ -42,7 +42,7 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-sage px-8 py-20">
+      <section className="bg-sage px-8 py-12">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-charcoal font-heading mb-8 text-4xl font-thin leading-tight tracking-wide md:text-5xl">
             Contact
@@ -55,9 +55,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white px-8 py-32">
+      <section className="bg-white px-8 py-12 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-24 lg:grid-cols-2">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
             {/* Contact Form */}
             <div className="slide-in-left">
               <h2 className="text-charcoal font-heading mb-8 text-2xl font-light">

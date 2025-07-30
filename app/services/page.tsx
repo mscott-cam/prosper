@@ -54,7 +54,7 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-cream px-8 py-20">
+      <section className="bg-cream px-8 py-12 lg:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-charcoal font-heading mb-8 text-4xl font-thin leading-tight tracking-wide md:text-5xl">
             Services
@@ -67,16 +67,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Detail Section */}
-      <section className="bg-white px-8 py-32">
+      <section className="bg-white px-8 py-12 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <div className="space-y-32">
+          <div className="space-y-12 lg:space-y-32">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`grid items-center gap-24 lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""} ${index === 0 ? "slide-in-left" : index === 1 ? "slide-in-right" : "slide-in-left"}`}
+                className={`grid items-center gap-12 lg:gap-24 lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""} ${index === 0 ? "slide-in-left" : index === 1 ? "slide-in-right" : "slide-in-left"}`}
               >
                 <div
-                  className={`relative h-[600px] ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+                  className={`relative h-[400px] lg:h-[600px] ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
                 >
                   <Image
                     src={service.image || "/placeholder.svg"}
@@ -124,7 +124,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="bg-charcoal px-8 py-32">
+      <section className="bg-charcoal px-8 py-20 lg:py-32">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="font-heading mb-16 text-3xl font-light text-white fade-in">
             Why Prosper Plantscapes
@@ -157,7 +157,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-sage px-8 py-32">
+      <section className="bg-sage px-8 py-20 lg:py-32">
         <div className="slide-up mx-auto max-w-4xl text-center">
           <h2 className="text-charcoal font-heading mb-8 text-3xl font-light leading-tight">
             Ready to begin your botanical journey?

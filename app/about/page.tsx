@@ -21,7 +21,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-cream px-8 py-20">
+      <section className="bg-cream px-8 py-12 lg:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-charcoal font-heading mb-8 text-4xl font-thin leading-tight tracking-wide md:text-5xl">
             About Prosper Plantscapes
@@ -35,15 +35,15 @@ export default function AboutPage() {
       </section>
 
       {/* Founders Section */}
-      <section className="bg-charcoal px-8 py-32">
+      <section className="bg-charcoal px-8 py-20 lg:py-32">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-20 text-center fade-in">
-            <h2 className="font-heading mb-4 text-3xl font-light text-white">
+          <div className="mb-12 text-center fade-in lg:mb-24">
+            <h2 className="font-heading text-4xl font-light text-white lg:mb-4">
               The Founders
             </h2>
           </div>
 
-          <div className="grid gap-16 md:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
             {founders.map((founder, index) => (
               <div
                 key={index}
@@ -65,7 +65,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="bg-sage px-8 py-32">
+      <section className="bg-sage px-8 py-20 lg:py-32">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-charcoal font-heading mb-16 text-3xl font-light fade-in">
             Our Philosophy
