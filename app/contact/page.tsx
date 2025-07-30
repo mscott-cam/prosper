@@ -15,7 +15,6 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
-    service: "",
     message: "",
   });
 
@@ -23,7 +22,7 @@ export default function ContactPage() {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Thank you for your inquiry. We'll be in touch within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (
@@ -121,28 +120,6 @@ export default function ContactPage() {
                     required
                     className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent"
                   />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="text-charcoal font-heading mb-3 block text-xs uppercase tracking-widest"
-                  >
-                    Service of Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="focus:border-charcoal text-charcoal w-full rounded-2xl border border-stone-200 bg-transparent px-4 py-3 focus:outline-none"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="consultation">Consultation</option>
-                    <option value="design">Design</option>
-                    <option value="maintenance">Maintenance</option>
-                    <option value="all-services">All Services</option>
-                  </select>
                 </div>
 
                 <div>
