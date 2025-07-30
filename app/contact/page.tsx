@@ -9,31 +9,90 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useToast } from "@/hooks/use-toast";
+
+// Define the form schema
+const formSchema = z.object({
+  name: z
+    .string()
+    .min(2, {
+      message: "Please enter your full name.",
+    })
+    .refine(
+      (val) => {
+        const words = val.trim().split(/\s+/);
+        return words.length >= 2 && words.every((word) => word.length > 0);
+      },
+      {
+        message: "Please enter your full name (first and last name).",
+      }
+    ),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  phone: z
+    .string()
+    .optional()
+    .refine(
+      (val) => {
+        if (!val) return true;
+        // Basic phone validation - accepts various formats
+        const phoneRegex = /^[\d\s\-\(\)\+]+$/;
+        return phoneRegex.test(val) && val.replace(/\D/g, "").length >= 10;
+      },
+      {
+        message: "Please enter a valid phone number.",
+      }
+    ),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    mode: "all",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry. We'll be in touch within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      console.log("Form submitted:", data);
+
+      toast({
+        title: "Success!",
+        description:
+          "Thank you for your inquiry. We'll be in touch within 24 hours.",
+      });
+
+      reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,7 +126,7 @@ export default function ContactPage() {
                 discuss your project and schedule an initial consultation.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label
@@ -79,12 +138,16 @@ export default function ContactPage() {
                     <Input
                       type="text"
                       id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
+                      {...register("name")}
+                      className={`focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto ${
+                        errors.name ? "border-red-500" : ""
+                      }`}
                     />
+                    {errors.name && (
+                      <p className="mt-2 text-sm text-red-600">
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -96,11 +159,16 @@ export default function ContactPage() {
                     <Input
                       type="tel"
                       id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
+                      {...register("phone")}
+                      className={`focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto ${
+                        errors.phone ? "border-red-500" : ""
+                      }`}
                     />
+                    {errors.phone && (
+                      <p className="mt-2 text-sm text-red-600">
+                        {errors.phone.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -114,12 +182,16 @@ export default function ContactPage() {
                   <Input
                     type="email"
                     id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
+                    {...register("email")}
+                    className={`focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto ${
+                      errors.email ? "border-red-500" : ""
+                    }`}
                   />
+                  {errors.email && (
+                    <p className="mt-2 text-sm text-red-600">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -131,21 +203,26 @@ export default function ContactPage() {
                   </label>
                   <Textarea
                     id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
+                    {...register("message")}
                     rows={12}
-                    className="focus:border-charcoal resize-none rounded-2xl border-stone-200 bg-transparent"
+                    className={`focus:border-charcoal resize-none rounded-2xl border-stone-200 bg-transparent ${
+                      errors.message ? "border-red-500" : ""
+                    }`}
                     placeholder="Tell us about your space, timeline, budget range, and any specific requirements or preferences..."
                   />
+                  {errors.message && (
+                    <p className="mt-2 text-sm text-red-600">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  className="bg-charcoal hover:bg-sage hover:text-charcoal w-full rounded-2xl py-4 text-sm uppercase tracking-wider text-white transition-colors"
+                  disabled={isSubmitting}
+                  className="bg-charcoal hover:bg-sage hover:text-charcoal w-full rounded-2xl py-4 text-sm uppercase tracking-wider text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Inquiry
+                  {isSubmitting ? "Sending..." : "Send Inquiry"}
                 </Button>
               </form>
             </div>
