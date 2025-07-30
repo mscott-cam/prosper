@@ -48,13 +48,13 @@ ${validatedData.message}
 
 --------------------
 Submitted on ${new Date().toLocaleString("en-US", {
-  timeZone: "America/Chicago",
-  dateStyle: "full",
-  timeStyle: "short",
-})}`;
+      timeZone: "America/Chicago",
+      dateStyle: "full",
+      timeStyle: "short",
+    })}`;
 
     const { data, error } = await resend.emails.send({
-      from: "Prosper Contact Form <scott@kordial.io>",
+      from: "Prosper Contact Form <info@prosperplantscapes.com>",
       to: process.env.EMAIL_TO || "info@prosperplantscapes.com",
       subject: `New Contact Form Submission from ${validatedData.name}`,
       text: emailContent,
