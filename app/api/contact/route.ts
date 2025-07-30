@@ -54,8 +54,8 @@ Submitted on ${new Date().toLocaleString("en-US", {
     })}`;
 
     const { data, error } = await resend.emails.send({
-      from: "Prosper Contact Form <info@prosperplantscapes.com>",
-      to: process.env.EMAIL_TO || "info@prosperplantscapes.com",
+      from: "Prosper Contact Form <rachel@prosperplantscapes.com>",
+      to: process.env.EMAIL_TO || "rachel@prosperplantscapes.com",
       subject: `New Contact Form Submission from ${validatedData.name}`,
       text: emailContent,
       replyTo: validatedData.email,
