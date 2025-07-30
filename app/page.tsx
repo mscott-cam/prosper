@@ -41,6 +41,12 @@ const clientLogos = [
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [heroHeight, setHeroHeight] = useState<string>("100vh");
+
+  useEffect(() => {
+    // Set initial viewport height on mount
+    setHeroHeight(`${window.innerHeight}px`);
+  }, []);
 
   useEffect(() => {
     // Simple parallax effect for hero only
@@ -194,17 +200,20 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        <div className="parallax-bg relative h-full w-full overflow-hidden">
+      <section
+        className="relative overflow-hidden"
+        style={{ height: heroHeight }}
+      >
+        <div className="parallax-bg absolute inset-0">
           <Image
             src="/images/prosper-main-large.jpg"
             alt="Botanical workspace design background"
             fill
-            className="h-full w-full max-w-full touch-none object-cover"
+            className="h-full w-full max-w-full object-cover"
             priority
           />
         </div>
-        <div className="slide-up absolute bottom-8 left-4 z-10 max-w-2xl md:bottom-16 md:left-8">
+        <div className="slide-up absolute bottom-8 left-4 z-10 md:bottom-16 md:left-8">
           <h1 className="font-heading mb-4 text-3xl font-thin leading-tight tracking-wide text-white drop-shadow-lg md:text-4xl lg:text-5xl">
             Boutique Plant Design Studio
           </h1>
