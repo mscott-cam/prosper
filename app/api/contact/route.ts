@@ -38,26 +38,26 @@ export async function POST(request: NextRequest) {
 
     const validatedData = contactSchema.parse(body);
 
-    const emailContent = `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${validatedData.name}</p>
-      <p><strong>Email:</strong> ${validatedData.email}</p>
-      ${validatedData.phone ? `<p><strong>Phone:</strong> ${validatedData.phone}</p>` : ""}
-      <p><strong>Message:</strong></p>
-      <p>${validatedData.message.replace(/\n/g, "<br>")}</p>
-      <hr>
-      <p><em>Submitted on ${new Date().toLocaleString("en-US", {
-        timeZone: "America/Chicago",
-        dateStyle: "full",
-        timeStyle: "short",
-      })}</em></p>
-    `;
+    const emailContent = `New Contact Form Submission
+
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+${validatedData.phone ? `Phone: ${validatedData.phone}\n` : ""}
+Message:
+${validatedData.message}
+
+--------------------
+Submitted on ${new Date().toLocaleString("en-US", {
+  timeZone: "America/Chicago",
+  dateStyle: "full",
+  timeStyle: "short",
+})}`;
 
     const { data, error } = await resend.emails.send({
       from: "Prosper Contact Form <scott@kordial.io>",
       to: process.env.EMAIL_TO || "info@prosperplantscapes.com",
       subject: `New Contact Form Submission from ${validatedData.name}`,
-      html: emailContent,
+      text: emailContent,
       replyTo: validatedData.email,
     });
 

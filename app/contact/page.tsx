@@ -263,12 +263,6 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div>
                     <p className="font-heading mb-2 text-xs uppercase tracking-widest text-stone-500">
-                      Phone
-                    </p>
-                    <p className="text-stone-700">(512) 555-0123</p>
-                  </div>
-                  <div>
-                    <p className="font-heading mb-2 text-xs uppercase tracking-widest text-stone-500">
                       Email
                     </p>
                     <p className="text-stone-700">
@@ -286,9 +280,8 @@ export default function ContactPage() {
                       Hours
                     </p>
                     <div className="space-y-1 text-stone-700">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday: By appointment</p>
+                      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                      <p>Saturday Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
@@ -298,15 +291,8 @@ export default function ContactPage() {
                 <h3 className="text-charcoal font-heading mb-8 text-xl font-light">
                   Service Areas
                 </h3>
-                <div className="grid grid-cols-2 gap-y-2 text-sm text-stone-600">
-                  <p>Downtown Austin</p>
-                  <p>South Austin</p>
-                  <p>North Austin</p>
-                  <p>East Austin</p>
-                  <p>West Austin</p>
-                  <p>Cedar Park</p>
-                  <p>Round Rock</p>
-                  <p>Pflugerville</p>
+                <div className="space-y-1 text-stone-700">
+                  <p>Austin & Surrounding Areas</p>
                 </div>
               </div>
             </div>
