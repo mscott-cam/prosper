@@ -135,7 +135,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={6}
+                    rows={12}
                     className="focus:border-charcoal resize-none rounded-2xl border-stone-200 bg-transparent"
                     placeholder="Tell us about your space, timeline, budget range, and any specific requirements or preferences..."
                   />
@@ -177,7 +177,7 @@ export default function ContactPage() {
                       Email
                     </p>
                     <p className="text-stone-700">
-                      hello@prosperplantscapes.com
+                      info@prosperplantscapes.com
                     </p>
                   </div>
                   <div>
@@ -281,7 +281,7 @@ export default function ContactPage() {
               <div className="space-y-3">
                 <div className="text-sm text-gray-300">
                   <p className="mb-1">(512) 555-0123</p>
-                  <p className="mb-3">hello@prosperplantscapes.com</p>
+                  <p className="mb-3">info@prosperplantscapes.com</p>
                 </div>
                 <Link
                   href="https://instagram.com/prosperplantscapes"
