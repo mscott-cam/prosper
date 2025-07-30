@@ -236,7 +236,6 @@ export default function ServicesPage() {
               </h4>
               <div className="space-y-3">
                 <div className="text-sm text-stone-600">
-                  <p className="mb-1">(512) 555-0123</p>
                   <p className="mb-3">info@prosperplantscapes.com</p>
                 </div>
                 <Link
