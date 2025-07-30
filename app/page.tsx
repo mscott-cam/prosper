@@ -138,8 +138,8 @@ export default function HomePage() {
               <Image
                 src="/images/prosper-white-logo.png"
                 alt="Prosper Plantscapes Logo"
-                width={40}
-                height={40}
+                width={56}
+                height={56}
                 className="rounded-xl object-contain opacity-80"
               />
             </Link>
@@ -150,16 +150,6 @@ export default function HomePage() {
             <Link
               href="/"
               className="font-display text-2xl font-light tracking-[0.3em] text-white transition-colors duration-200 hover:text-white/80 xl:text-3xl"
-            >
-              PROSPER PLANTSCAPES
-            </Link>
-          </div>
-
-          {/* Mobile Center Title */}
-          <div className="absolute left-1/2 -translate-x-1/2 transform lg:hidden">
-            <Link
-              href="/"
-              className="font-display text-lg font-light tracking-[0.2em] text-white"
             >
               PROSPER PLANTSCAPES
             </Link>
@@ -189,7 +179,7 @@ export default function HomePage() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {!isMobileMenuOpen ? <Menu size={32} /> : null}
           </button>
         </div>
       </nav>
@@ -214,6 +204,10 @@ export default function HomePage() {
           />
         </div>
         <div className="slide-up absolute bottom-8 left-4 z-10 md:bottom-16 md:left-8">
+          {/* Mobile Title - visible only on mobile */}
+          <h2 className="font-display mb-6 text-5xl font-light tracking-[0.3em] text-white drop-shadow-lg lg:hidden">
+            PROSPER PLANTSCAPES
+          </h2>
           <h1 className="font-heading mb-4 text-3xl font-thin leading-tight tracking-wide text-white drop-shadow-lg md:text-4xl lg:text-5xl">
             Boutique Plant Design Studio
           </h1>
@@ -253,7 +247,7 @@ export default function HomePage() {
                 src="/images/interior-plant-design.jpg"
                 alt="Modern interior featuring a large fiddle leaf fig plant in white ceramic planter with warm wood paneling and ambient lighting"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover"
               />
             </div>
           </div>
@@ -291,7 +285,7 @@ export default function HomePage() {
                 src="/images/bluecorner.jpeg"
                 alt="Modern turquoise interior corner featuring tall snake plant in black planter, black cane chair with rattan details, wooden desk with brass lamp and decorative vase"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover"
               />
             </div>
             <div className="order-2 space-y-6 md:space-y-8">
