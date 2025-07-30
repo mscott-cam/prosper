@@ -280,12 +280,12 @@ export default function HomePage() {
       <section className="bg-white px-4 py-8 md:px-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-24">
-            <div className="group relative order-1 overflow-hidden rounded-2xl md:h-[600px]">
+            <div className="group relative order-1 overflow-hidden rounded-2xl h-[400px] md:h-[600px]">
               <Image
                 src="/images/bluecorner.jpeg"
                 alt="Modern turquoise interior corner featuring tall snake plant in black planter, black cane chair with rattan details, wooden desk with brass lamp and decorative vase"
                 fill
-                className="object-cover"
+                className="object-cover object-bottom"
               />
             </div>
             <div className="order-2 space-y-6 md:space-y-8">
