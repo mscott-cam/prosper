@@ -281,7 +281,7 @@ export default function ContactPage() {
                     </p>
                     <div className="space-y-1 text-stone-700">
                       <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                      <p>Saturday Sunday: Closed</p>
+                      <p>Saturday & Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
