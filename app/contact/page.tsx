@@ -83,7 +83,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent"
+                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
                     />
                   </div>
                   <div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent"
+                      className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
                     />
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent"
+                    className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
                   />
                 </div>
 
