@@ -72,10 +72,19 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log("Form submitted:", data);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
 
       toast({
         title: "Success!",
@@ -85,9 +94,14 @@ export default function ContactPage() {
 
       reset();
     } catch (error) {
+      console.error("Form submission error:", error);
+
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -126,7 +140,11 @@ export default function ContactPage() {
                 discuss your project and schedule an initial consultation.
               </p>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-8"
+                noValidate
+              >
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label
