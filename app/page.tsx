@@ -408,9 +408,6 @@ export default function HomePage() {
       {/* Gallery Section */}
       <section className="bg-white px-4 py-16 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-charcoal font-heading mb-8 text-center text-2xl font-light leading-tight md:mb-12 md:text-3xl">
-            Our Work
-          </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {[
               {
