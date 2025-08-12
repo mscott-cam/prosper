@@ -88,8 +88,7 @@ export default function ContactPage() {
 
       toast({
         title: "Success!",
-        description:
-          "Thank you for your inquiry. We'll be in touch within 24 hours.",
+        description: "Thank you for your inquiry. We'll be in touch ASAP.",
       });
 
       reset();
@@ -136,8 +135,8 @@ export default function ContactPage() {
                 Schedule a Consultation
               </h2>
               <p className="mb-12 leading-relaxed text-stone-600">
-                Complete the form below and we'll contact you within 24 hours to
-                discuss your project and schedule an initial consultation.
+                Complete the form below and we'll contact you ASAP to discuss
+                your project and schedule an initial consultation.
               </p>
 
               <form
@@ -249,7 +248,7 @@ export default function ContactPage() {
             <div className="slide-in-right space-y-12">
               <div className="relative h-80 overflow-hidden">
                 <Image
-                  src="/images/sidewalk.jpeg"
+                  src="/images/conference_room.jpeg"
                   alt="Prosper Plantscapes studio"
                   fill
                   className="rounded-2xl object-cover"

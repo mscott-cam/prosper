@@ -30,13 +30,13 @@ const services = [
 ];
 
 const clientLogos = [
-  "TACODELI",
-  "RIVERSIDE RESOURCES",
-  "EMMER & RYE GROUP",
-  "COLORS OF AUSTIN COUNSELING",
-  "MICHAEL HSU ARCHITECTURE",
-  "COVERT AUTO GROUP",
-  "INDEED",
+  { name: "Tacodeli", src: "/images/tacodeli.png" },
+  { name: "Riverside Resources", src: "/images/riverside.png" },
+  { name: "Indeed", src: "/images/indeed.png" },
+  { name: "Colors of Austin Counseling", src: "/images/colors-of-austin.svg" },
+  { name: "Michael Hsu Architecture", src: "/images/michael-hsu.jpeg" },
+  { name: "Covert Auto Group", src: "/images/covert-auto.png" },
+  { name: "Emmer & Rye", src: "/images/emmer-rye.png" },
 ];
 
 export default function HomePage() {
@@ -226,7 +226,7 @@ export default function HomePage() {
                 <span className="text-charcoal mb-4 block text-2xl font-bold md:text-3xl lg:text-4xl">
                   At Prosper Plantscapes,
                 </span>
-                we are more than just a plant company. We're a brand where
+                We are more than just a plant company. We're a brand where
                 design, sustainability and functionality all work together to
                 enrich your workplace and lifestyle.
                 <br />
@@ -255,23 +255,101 @@ export default function HomePage() {
       </section>
 
       {/* Client Logos */}
-      <section className="bg-cream px-4 py-8 md:px-8 md:py-12">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-cream px-4 py-20 md:px-8 md:py-12">
+        <div className="mx-auto">
           <p className="mb-8 text-center text-xs uppercase tracking-widest text-stone-500 md:mb-12 md:text-sm">
             Trusted by
           </p>
-          <div className="grid grid-cols-1 gap-4 text-center md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+
+          {/* Mobile - Static Vertical Layout */}
+          <div className="flex flex-col items-center gap-16 md:hidden">
             {clientLogos.map((logo, index) => (
               <div
                 key={index}
-                className={`text-charcoal flex transform items-center justify-center py-2 text-sm font-medium tracking-wider transition-all duration-300 hover:scale-110 hover:text-stone-600 md:text-base ${
-                  index === 6 ? "lg:col-start-2" : ""
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="flex transform items-center justify-center transition-all duration-300"
               >
-                {logo}
+                <div
+                  className={`relative h-16 ${
+                    logo.name === "Michael Hsu Architecture"
+                      ? "flex items-center justify-center"
+                      : "w-40"
+                  }`}
+                >
+                  {logo.name === "Michael Hsu Architecture" ? (
+                    <div className="border border-black rounded px-4 py-3 bg-white inline-flex items-center justify-center">
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        width={80}
+                        height={50}
+                        className="object-contain grayscale transition-all duration-300"
+                      />
+                    </div>
+                  ) : logo.name === "Emmer & Rye" ? (
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      fill
+                      className="object-contain grayscale transition-all duration-300 scale-150"
+                    />
+                  ) : (
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      fill
+                      className="object-contain grayscale transition-all duration-300"
+                    />
+                  )}
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Desktop - Horizontal Infinite Scroll */}
+          <div className="hidden md:block overflow-hidden max-w-[100vw]">
+            <div className="flex animate-scroll items-center">
+              {/* First set of logos */}
+              {clientLogos.concat(clientLogos).map((logo, index) => (
+                <div
+                  key={`${index}-1`}
+                  className="flex transform items-center justify-center transition-all duration-300 px-8 flex-shrink-0"
+                >
+                  <div
+                    className={`relative ${
+                      logo.name === "Michael Hsu Architecture"
+                        ? "flex items-center justify-center"
+                        : "h-20 w-48"
+                    }`}
+                  >
+                    {logo.name === "Michael Hsu Architecture" ? (
+                      <div className="border border-black rounded px-6 py-4 bg-white inline-flex items-center justify-center scale-75">
+                        <Image
+                          src={logo.src}
+                          alt={logo.name}
+                          width={120}
+                          height={75}
+                          className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                        />
+                      </div>
+                    ) : logo.name === "Emmer & Rye" ? (
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        fill
+                        className="object-contain grayscale hover:grayscale-0 transition-all duration-300 scale-150"
+                      />
+                    ) : (
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        fill
+                        className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
