@@ -47,6 +47,7 @@ const formSchema = z.object({
         message: "Please enter a valid phone number.",
       }
     ),
+  referralSource: z.string().optional(),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
@@ -155,6 +156,7 @@ export default function ContactPage() {
                     <Input
                       type="text"
                       id="name"
+                      maxLength={100}
                       {...register("name")}
                       className={`focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto ${
                         errors.name ? "border-red-500" : ""
@@ -199,6 +201,7 @@ export default function ContactPage() {
                   <Input
                     type="email"
                     id="email"
+                    maxLength={254}
                     {...register("email")}
                     className={`focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto ${
                       errors.email ? "border-red-500" : ""
@@ -209,6 +212,22 @@ export default function ContactPage() {
                       {errors.email.message}
                     </p>
                   )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="referralSource"
+                    className="text-charcoal font-heading mb-3 block text-xs uppercase tracking-widest"
+                  >
+                    How did you hear about us?
+                  </label>
+                  <Input
+                    type="text"
+                    id="referralSource"
+                    {...register("referralSource")}
+                    maxLength={500}
+                    className="focus:border-charcoal rounded-2xl border-stone-200 bg-transparent h-12 lg:h-auto"
+                  />
                 </div>
 
                 <div>
@@ -226,6 +245,7 @@ export default function ContactPage() {
                       errors.message ? "border-red-500" : ""
                     }`}
                     placeholder="Tell us about your space, timeline, budget range, and any specific requirements or preferences..."
+                    maxLength={3000}
                   />
                   {errors.message && (
                     <p className="mt-2 text-sm text-red-600">
@@ -306,6 +326,7 @@ export default function ContactPage() {
             <div>
               <div className="mb-6 flex items-center space-x-4">
                 <Image
+                  priority
                   src="/images/prosper-white-logo.png"
                   alt="Prosper Plantscapes Logo"
                   width={48}

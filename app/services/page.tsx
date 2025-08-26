@@ -109,13 +109,14 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
-
-                  <Button
-                    variant="outline"
-                    className="border-charcoal text-charcoal hover:bg-charcoal bg-transparent px-8 py-3 text-sm uppercase tracking-wider hover:text-white"
-                  >
-                    <Link href="/contact">Learn More</Link>
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      className="border-charcoal text-charcoal hover:bg-charcoal bg-transparent px-8 py-3 text-sm uppercase tracking-wider hover:text-white"
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -166,12 +167,14 @@ export default function ServicesPage() {
             Let's discuss how we can transform your space with thoughtfully
             curated plants and design.
           </p>
-          <Button
-            variant="outline"
-            className="border-charcoal text-charcoal hover:bg-charcoal bg-transparent px-8 py-3 text-sm uppercase tracking-wider hover:text-white"
-          >
-            <Link href="/contact">Schedule Consultation</Link>
-          </Button>
+          <Link href="/contact">
+            <Button
+              variant="outline"
+              className="border-charcoal text-charcoal hover:bg-charcoal bg-transparent px-8 py-3 text-sm uppercase tracking-wider hover:text-white"
+            >
+              Schedule Consultation
+            </Button>
+          </Link>
         </div>
       </section>
 

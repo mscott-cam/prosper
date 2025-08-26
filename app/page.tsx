@@ -390,18 +390,18 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <Button
-                variant="outline"
-                className="border-charcoal text-charcoal hover:bg-charcoal group w-full bg-transparent px-6 py-3 text-xs uppercase tracking-wider hover:text-white md:w-auto md:px-8 md:text-sm"
+              <Link
+                href="/services"
+                className="flex items-center justify-center space-x-2"
               >
-                <Link
-                  href="/services"
-                  className="flex items-center justify-center space-x-2"
+                <Button
+                  variant="outline"
+                  className="border-charcoal text-charcoal hover:bg-charcoal group w-full bg-transparent px-6 py-3 text-xs uppercase tracking-wider hover:text-white md:w-auto md:px-8 md:text-sm"
                 >
                   <span>Service Details</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -420,12 +420,14 @@ export default function HomePage() {
                 A thoughtful approach to creating spaces where plants and design
                 exist in perfect balance.
               </p>
-              <Button
-                variant="outline"
-                className="hover:text-charcoal w-full border-white bg-transparent px-6 py-3 text-xs uppercase tracking-wider text-white hover:bg-white md:w-auto md:px-8 md:text-sm"
-              >
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  className="hover:text-charcoal w-full border-white bg-transparent px-6 py-3 text-xs uppercase tracking-wider text-white hover:bg-white md:w-auto md:px-8 md:text-sm"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
 
             {/* Right Column - Steps with connecting line */}
