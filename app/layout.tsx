@@ -3,14 +3,18 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Prosper Plantscapes - Boutique Plant Design Studio",
-  description: "Professional botanical curation for Austin's most important spaces. We create custom plant installations for homes and businesses.",
-  keywords: "plant design, botanical curation, office plants, Austin Texas, plant maintenance, interior plants",
+  description:
+    "Professional botanical curation for Austin's most important spaces. We create custom plant installations for homes and businesses.",
+  keywords:
+    "plant design, botanical curation, office plants, Austin Texas, plant maintenance, interior plants",
   openGraph: {
     title: "Prosper Plantscapes - Boutique Plant Design Studio",
-    description: "Professional botanical curation for Austin's most important spaces",
+    description:
+      "Professional botanical curation for Austin's most important spaces",
     type: "website",
   },
 };
@@ -24,6 +28,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className={GeistSans.className}>
         {children}
+        <Analytics />
         <Toaster />
       </body>
     </html>
