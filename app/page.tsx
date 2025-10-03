@@ -392,7 +392,7 @@ export default function HomePage() {
               </ul>
               <Link
                 href="/services"
-                className="flex items-center justify-center space-x-2"
+                className="flex items-center space-x-2"
               >
                 <Button
                   variant="outline"
