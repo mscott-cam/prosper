@@ -24,6 +24,20 @@
     --input: 33 8% 87%;
     --ring: 0 0% 15%;
     --radius: 0rem;
+
+    --moss: #2f3d2a;
+    --moss-deep: #1f2a1b;
+    --moss-soft: #475c40;
+    --sage: #c8d4c1;
+    --sage-deep: #a4b69b;
+    --sage-soft: #dde5d8;
+    --bone: #f4efe6;
+    --bone-warm: #ede6d6;
+    --paper: #fbf8f1;
+    --clay: #b4593a;
+    --clay-deep: #8e4127;
+    --ink: #1a1a17;
+    --ink-soft: #4a4a44;
   }
 }
 
@@ -32,20 +46,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background font-light text-foreground;
-    letter-spacing: 0.01em;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      "Helvetica Neue",
-      Arial,
-      sans-serif;
+    @apply bg-bone font-light text-ink;
+    letter-spacing: 0.005em;
+    font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   }
   html {
     scroll-behavior: smooth;
+  }
+  ::selection {
+    background: var(--moss);
+    color: var(--bone);
   }
 }
 
@@ -53,20 +63,58 @@
   .text-balance {
     text-wrap: balance;
   }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Botanical Atelier — primary palette utilities */
+  .font-display {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-feature-settings: "ss01", "ss02";
+  }
+  .font-heading {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-weight: 350;
+  }
+  .hairline {
+    height: 1px;
+    background-color: rgba(26, 26, 23, 0.18);
+  }
+  .hairline-bone {
+    height: 1px;
+    background-color: rgba(244, 239, 230, 0.22);
+  }
+  .marginalia {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .text-clay-rule {
+    background: linear-gradient(currentColor, currentColor) bottom left / 0 1px
+      no-repeat;
+    transition: background-size 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .text-clay-rule:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Legacy palette (used by /services, /about, /contact until migrated) */
   .bg-cream {
     background-color: #f8f6ec;
   }
   .text-cream {
     color: #f8f6ec;
   }
+  .border-cream {
+    border-color: #f8f6ec;
+  }
   .bg-charcoal {
     background-color: #252525;
   }
   .text-charcoal {
     color: #252525;
-  }
-  .border-cream {
-    border-color: #f8f6ec;
   }
   .border-charcoal {
     border-color: #252525;
@@ -79,21 +127,6 @@
   }
   .border-sage {
     border-color: #c8d4c1;
-  }
-  .font-display {
-    font-family: "Optima", "Segoe UI", system-ui, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
-  .font-heading {
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      sans-serif;
-    font-weight: 300;
   }
 }
 
@@ -177,4 +210,28 @@
 
 .animate-scroll {
   animation: scroll 20s linear infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-cursor-mounted="true"] {
+    cursor: none;
+  }
+  [data-cursor-mounted="true"] a,
+  [data-cursor-mounted="true"] button,
+  [data-cursor-mounted="true"] [role="button"],
+  [data-cursor-mounted="true"] input,
+  [data-cursor-mounted="true"] textarea {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

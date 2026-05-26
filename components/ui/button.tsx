@@ -18,12 +18,19 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        clay:
+          "rounded-full bg-clay text-bone hover:bg-clay-deep border border-clay-deep/30 px-7 py-3 text-[0.78rem] uppercase tracking-[0.22em] font-mono",
+        moss:
+          "rounded-full bg-moss text-bone hover:bg-moss-deep border border-moss-deep/40 px-7 py-3 text-[0.78rem] uppercase tracking-[0.22em] font-mono",
+        editorial:
+          "relative font-mono uppercase text-[0.72rem] tracking-[0.28em] text-ink after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:h-px after:w-full after:bg-clay after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.22,1,0.36,1)]",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
+        none: "",
       },
     },
     defaultVariants: {
