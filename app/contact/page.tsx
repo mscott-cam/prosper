@@ -151,7 +151,7 @@ export default function ContactPage() {
 
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className="mt-12 space-y-10"
+                  className="mt-12 space-y-8 md:space-y-10"
                   noValidate
                 >
                   <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -236,7 +236,7 @@ export default function ContactPage() {
                     </label>
                     <textarea
                       id="message"
-                      rows={6}
+                      rows={4}
                       maxLength={3000}
                       placeholder="Tell us about your space, timeline, budget range, and any specific preferences…"
                       {...register("message")}
@@ -271,7 +271,7 @@ export default function ContactPage() {
             {/* Aside: image + contact info */}
             <aside className="col-span-12 md:col-span-5">
               <Reveal as="div" delay={0.15} className="space-y-12">
-                <figure className="relative aspect-[4/5] overflow-hidden bg-bone-warm shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)]">
+                <figure className="relative aspect-[3/4] overflow-hidden bg-bone-warm shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)] md:aspect-[4/5]">
                   <Image
                     src="/images/conference_room.jpeg"
                     alt="A Prosper Plantscapes conference room install"
@@ -303,7 +303,7 @@ export default function ContactPage() {
                       <p className="marginalia text-ink-soft">Email</p>
                       <a
                         href="mailto:info@prosperplantscapes.com"
-                        className="mt-3 block font-display text-base italic text-ink hover:text-clay"
+                        className="mt-3 block break-all font-display text-base italic text-ink hover:text-clay"
                         data-cursor="hover"
                       >
                         info@prosperplantscapes.com

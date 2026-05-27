@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/site/site-footer";
@@ -6,6 +5,10 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { Reveal } from "@/components/motion/reveal";
 import { MagneticLink } from "@/components/motion/magnetic-link";
 import { LeafMark, Asterism } from "@/components/marks/leaf-mark";
+import {
+  RachelPortrait,
+  AudreaPortrait,
+} from "@/components/marks/founder-portrait";
 
 export const metadata: Metadata = {
   title: "About — Prosper Plantscapes",
@@ -18,14 +21,14 @@ const FOUNDERS = [
     name: "Rachel Roberts",
     role: "Co-Founder",
     bio: "Owner and founder of Flourish Plant Shop & Design, Rachel lends years of design work to Prosper. After running a shop and cultivating a curated aesthetic of her own, she brings that practiced eye to commercial and residential plant design.",
-    image: "/images/interior-plant-design.jpg",
+    Portrait: RachelPortrait,
     plate: "Plate № A · Studio",
   },
   {
     name: "Audrea Straub",
     role: "Co-Founder",
     bio: "Born and raised in Austin, Audrea has spent over a decade in the horticulture field. Her creativity also shows in the seasonal floral designs she composes from her own garden. “Connecting people with plants is my greatest joy — and to say I’m a crazy plant lady is an understatement.”",
-    image: "/images/succulent-garden.jpg",
+    Portrait: AudreaPortrait,
     plate: "Plate № B · Garden",
   },
 ];
@@ -113,13 +116,7 @@ export default function AboutPage() {
                   }`}
                 >
                   <figure className="relative aspect-[3/4] overflow-hidden bg-bone shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)]">
-                    <Image
-                      src={founder.image}
-                      alt={`Work composed by ${founder.name}`}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 768px) 35vw, 100vw"
-                    />
+                    <founder.Portrait className="absolute inset-0 h-full w-full" />
                     <div className="absolute inset-0 bg-sage/25 mix-blend-multiply" />
                   </figure>
                   <p className="marginalia mt-4 text-ink-soft">{founder.plate}</p>

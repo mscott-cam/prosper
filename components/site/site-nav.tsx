@@ -187,14 +187,14 @@ export function SiteNav({ variant = "transparent" }: SiteNavProps) {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="mt-6 inline-flex items-center gap-3 rounded-full bg-clay px-6 py-3 font-mono text-xs uppercase tracking-[0.24em] text-bone"
+                  className="mt-6 inline-flex items-center gap-3 rounded-full bg-clay px-6 py-3 font-mono text-[0.78rem] uppercase tracking-[0.24em] text-bone"
                 >
                   Inquire <span aria-hidden>→</span>
                 </Link>
               </motion.div>
             </nav>
 
-            <div className="flex items-end justify-between font-mono text-[0.7rem] uppercase tracking-[0.24em] text-ink-soft">
+            <div className="flex items-end justify-between font-mono text-xs uppercase tracking-[0.24em] text-ink-soft">
               <span>Austin · TX</span>
               <span>info@prosperplantscapes.com</span>
             </div>

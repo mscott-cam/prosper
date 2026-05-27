@@ -9,7 +9,7 @@ const WORKS = [
     title: "Riverside Studio",
     place: "East Austin · Office",
     src: "/images/gallery1.jpeg",
-    aspect: "aspect-[3/4]",
+    aspect: "aspect-[4/3] md:aspect-[3/4]",
     span: "md:col-span-5 md:col-start-1",
     offset: "md:mt-0",
   },
@@ -25,15 +25,15 @@ const WORKS = [
     title: "Window Sill Composition",
     place: "South Lamar · Residential",
     src: "/images/gallery3.jpeg",
-    aspect: "aspect-[1/1]",
+    aspect: "aspect-[4/3] md:aspect-[1/1]",
     span: "md:col-span-4 md:col-start-2",
-    offset: "md:-mt-16",
+    offset: "md:mt-8",
   },
   {
     title: "Welcome Vestibule",
     place: "Downtown · Commercial",
     src: "/images/outside-corner.jpeg",
-    aspect: "aspect-[3/4]",
+    aspect: "aspect-[4/3] md:aspect-[3/4]",
     span: "md:col-span-5 md:col-start-7",
     offset: "md:mt-24",
   },
@@ -51,7 +51,9 @@ export function SelectedWork() {
             </h2>
           </div>
           <a
-            href="/contact"
+            href="https://instagram.com/prosperplantscapes"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden font-mono text-[0.7rem] uppercase tracking-[0.24em] text-ink md:inline-flex"
             data-cursor="hover"
           >
@@ -93,7 +95,7 @@ export function SelectedWork() {
                     <div className="absolute inset-0 bg-sage/30 mix-blend-multiply" />
                   </motion.div>
                 </div>
-                <figcaption className="mt-5 flex items-baseline justify-between">
+                <figcaption className="mt-5 flex items-baseline justify-between px-4 pb-5">
                   <div>
                     <p className="font-display text-2xl italic text-ink">
                       {work.title}
@@ -109,6 +111,21 @@ export function SelectedWork() {
               </motion.figure>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center md:hidden">
+          <a
+            href="https://instagram.com/prosperplantscapes"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[0.7rem] uppercase tracking-[0.24em] text-ink"
+            data-cursor="hover"
+          >
+            <span className="relative">
+              See full archive
+              <span className="absolute -bottom-1 left-0 h-px w-full bg-clay" />
+            </span>
+          </a>
         </div>
       </div>
     </section>
