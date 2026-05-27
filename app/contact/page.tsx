@@ -136,7 +136,7 @@ export default function ContactPage() {
       <section className="relative bg-bone pb-32 md:pb-44">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="h-px w-full bg-ink/15" />
-          <div className="grid grid-cols-12 gap-12 pt-16 md:gap-20 md:pt-24">
+          <div className="grid grid-cols-12 gap-y-12 pt-16 md:gap-20 md:pt-24">
             {/* Form */}
             <div className="col-span-12 md:col-span-7">
               <Reveal as="div" delay={0.05}>
@@ -338,7 +338,7 @@ export default function ContactPage() {
                     <div>
                       <p className="marginalia text-ink-soft">Service area</p>
                       <p className="mt-3 text-sm leading-relaxed text-ink">
-                        Austin &<br /> Central Texas
+                        Austin & Surrounding Areas
                       </p>
                     </div>
                   </div>
