@@ -10,7 +10,6 @@ import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/site/site-footer";
-import { CustomCursor } from "@/components/custom-cursor";
 import { Reveal } from "@/components/motion/reveal";
 import { LeafMark } from "@/components/marks/leaf-mark";
 
@@ -103,7 +102,6 @@ export default function ContactPage() {
 
   return (
     <main className="bg-bone text-ink">
-      <CustomCursor />
       <SiteNav variant="solid" />
 
       {/* Hero / Intro */}
@@ -286,7 +284,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-4">
                     <LeafMark size={20} className="mt-1 text-moss" />
                     <div>
-                      <p className="marginalia text-clay">— Studio</p>
+                      <p className="marginalia text-clay">— Boutique Plant Design Services</p>
                       <p className="mt-3 font-display text-xl italic text-ink">
                         Prosper Plantscapes
                       </p>

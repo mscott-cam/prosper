@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useReducedMotion,
-} from "motion/react";
+import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export function CustomCursor() {
@@ -15,10 +10,8 @@ export function CustomCursor() {
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  const ringX = useSpring(cursorX, { stiffness: 160, damping: 20, mass: 0.6 });
-  const ringY = useSpring(cursorY, { stiffness: 160, damping: 20, mass: 0.6 });
-  const dotX = useSpring(cursorX, { stiffness: 600, damping: 30, mass: 0.2 });
-  const dotY = useSpring(cursorY, { stiffness: 600, damping: 30, mass: 0.2 });
+  const x = useSpring(cursorX, { stiffness: 400, damping: 35, mass: 0.4 });
+  const y = useSpring(cursorY, { stiffness: 400, damping: 35, mass: 0.4 });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -50,36 +43,20 @@ export function CustomCursor() {
   if (!enabled) return null;
 
   return (
-    <>
+    <motion.div
+      aria-hidden="true"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2"
+      style={{ x, y }}
+    >
       <motion.div
-        aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
-        style={{ x: ringX, y: ringY }}
-      >
-        <motion.div
-          className="rounded-full border border-bone"
-          animate={{
-            width: hovering ? 56 : 28,
-            height: hovering ? 56 : 28,
-            opacity: 0.7,
-          }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </motion.div>
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2"
-        style={{ x: dotX, y: dotY }}
-      >
-        <motion.div
-          className="rounded-full bg-clay"
-          animate={{
-            width: hovering ? 4 : 6,
-            height: hovering ? 4 : 6,
-          }}
-          transition={{ duration: 0.2 }}
-        />
-      </motion.div>
-    </>
+        className="rounded-full bg-clay"
+        animate={{
+          width: hovering ? 10 : 7,
+          height: hovering ? 10 : 7,
+          opacity: hovering ? 0.9 : 0.65,
+        }}
+        transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </motion.div>
   );
 }

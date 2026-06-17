@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/site/site-footer";
-import { CustomCursor } from "@/components/custom-cursor";
 import { Reveal } from "@/components/motion/reveal";
 import { MagneticLink } from "@/components/motion/magnetic-link";
+import Image from "next/image";
 import { LeafMark, Asterism } from "@/components/marks/leaf-mark";
-import {
-  RachelPortrait,
-  AudreaPortrait,
-} from "@/components/marks/founder-portrait";
 
 export const metadata: Metadata = {
   title: "About — Prosper Plantscapes",
   description:
-    "Two women, one small studio in Austin — composing rooms where plants and design thrive together.",
+    "Two women, one boutique plant design service in Austin — composing rooms where plants and design thrive together.",
 };
 
 const FOUNDERS = [
@@ -21,14 +17,18 @@ const FOUNDERS = [
     name: "Rachel Roberts",
     role: "Co-Founder",
     bio: "Owner and founder of Flourish Plant Shop & Design, Rachel lends years of design work to Prosper. After running a shop and cultivating a curated aesthetic of her own, she brings that practiced eye to commercial and residential plant design.",
-    Portrait: RachelPortrait,
-    plate: "Plate № A · Studio",
+    imageSrc: "/images/rachel-headshot.png",
+    imageWidth: 995,
+    imageHeight: 735,
+    plate: "Plate № A · Services",
   },
   {
     name: "Audrea Straub",
     role: "Co-Founder",
     bio: "Born and raised in Austin, Audrea has spent over a decade in the horticulture field. Her creativity also shows in the seasonal floral designs she composes from her own garden. “Connecting people with plants is my greatest joy — and to say I’m a crazy plant lady is an understatement.”",
-    Portrait: AudreaPortrait,
+    imageSrc: "/images/audrea-headshot.jpg",
+    imageWidth: 2000,
+    imageHeight: 3000,
     plate: "Plate № B · Garden",
   },
 ];
@@ -54,7 +54,6 @@ const PHILOSOPHY = [
 export default function AboutPage() {
   return (
     <main className="bg-bone text-ink">
-      <CustomCursor />
       <SiteNav variant="solid" />
 
       {/* Hero / Intro */}
@@ -64,11 +63,11 @@ export default function AboutPage() {
             <div className="col-span-12 md:col-span-7">
               <p className="marginalia flex items-center gap-3 text-ink-soft">
                 <span className="inline-block h-px w-10 bg-clay" />
-                № 002 — The Studio
+                № 002 — Boutique Plant Design
               </p>
               <h1 className="mt-10 font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] tracking-tightest-display text-ink">
                 Two women, <br />
-                <em className="font-light">one small studio,</em> <br />
+                <em className="font-light">one boutique plant design service,</em> <br />
                 in Austin.
               </h1>
             </div>
@@ -115,8 +114,14 @@ export default function AboutPage() {
                     i % 2 === 1 ? "md:order-2 md:col-start-8" : ""
                   }`}
                 >
-                  <figure className="relative aspect-[3/4] overflow-hidden bg-bone shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)]">
-                    <founder.Portrait className="absolute inset-0 h-full w-full" />
+                  <figure className="relative overflow-hidden bg-bone shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)]">
+                    <Image
+                      src={founder.imageSrc}
+                      alt={founder.name}
+                      width={founder.imageWidth}
+                      height={founder.imageHeight}
+                      className="block h-auto w-full"
+                    />
                     <div className="absolute inset-0 bg-sage/25 mix-blend-multiply" />
                   </figure>
                   <p className="marginalia mt-4 text-ink-soft">{founder.plate}</p>

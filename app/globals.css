@@ -209,21 +209,15 @@
 }
 
 .animate-scroll {
-  animation: scroll 20s linear infinite;
+  animation: scroll 14s linear infinite;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  [data-cursor-mounted="true"] {
-    cursor: none;
-  }
-  [data-cursor-mounted="true"] a,
-  [data-cursor-mounted="true"] button,
-  [data-cursor-mounted="true"] [role="button"],
-  [data-cursor-mounted="true"] input,
-  [data-cursor-mounted="true"] textarea {
-    cursor: none;
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 10s;
   }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   *,

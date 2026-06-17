@@ -15,13 +15,13 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Prosper Plantscapes — Boutique Plant Design Studio",
+  title: "Prosper Plantscapes — Boutique Plant Design Services",
   description:
-    "Living rooms for working. A boutique plant design studio bringing curated botanical installations to Austin's offices, hospitality, and homes.",
+    "Living rooms for working. Boutique plant design services bringing curated botanical installations to Austin's offices, hospitality, and homes.",
   keywords:
     "plant design, botanical curation, office plants, Austin Texas, plant maintenance, interior plants",
   openGraph: {
-    title: "Prosper Plantscapes — Boutique Plant Design Studio",
+    title: "Prosper Plantscapes — Boutique Plant Design Services",
     description:
       "Living rooms for working. Boutique botanical installations in Austin, Texas.",
     type: "website",

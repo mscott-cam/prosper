@@ -64,7 +64,7 @@ export function HeroMast() {
         <Reveal as="div">
           <p className="marginalia flex items-center gap-3 text-ink-soft">
             <span className="inline-block h-px w-10 bg-clay" />
-            Botanical Studio, Austin
+            Boutique Plant Design, Austin
           </p>
         </Reveal>
 
@@ -90,7 +90,7 @@ export function HeroMast() {
             >
               <span className="mt-2 inline-block h-px w-8 bg-clay" />
               <p className="font-display text-lg italic leading-snug text-ink-soft md:text-xl">
-                A boutique plant design studio composing rooms where green
+                A boutique plant design service composing rooms where green
                 things and good work share the same daylight.
               </p>
             </motion.div>
