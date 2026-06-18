@@ -8,6 +8,7 @@ const CLIENTS = [
   { name: "Michael Hsu Architecture", src: "/images/michael-hsu.jpeg" },
   { name: "Covert Auto Group", src: "/images/covert-auto.png" },
   { name: "Emmer & Rye", src: "/images/emmer-rye.png" },
+  { name: "Bloom", src: "/images/bloom.svg" },
 ];
 
 export function ClientsRoll() {
@@ -20,12 +21,12 @@ export function ClientsRoll() {
             Trusted By
           </h2>
         </div>
-        <div className="mt-16 overflow-hidden">
-          <div className="flex min-w-max animate-scroll items-center gap-24">
+        <div className="mt-16 hidden overflow-hidden md:block">
+          <div className="flex min-w-max animate-scroll items-center">
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
-                className="relative h-24 w-52 flex-shrink-0"
+                className="relative mr-24 h-24 w-52 flex-shrink-0"
               >
                 <Image
                   src={client.src}
@@ -40,7 +41,7 @@ export function ClientsRoll() {
               <div
                 key={`${client.name}-dup`}
                 aria-hidden="true"
-                className="relative h-24 w-52 flex-shrink-0"
+                className="relative mr-24 h-24 w-52 flex-shrink-0"
               >
                 <Image
                   src={client.src}
@@ -52,6 +53,19 @@ export function ClientsRoll() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="mx-auto mt-12 grid max-w-md grid-cols-2 gap-x-8 gap-y-10 px-6 md:hidden">
+          {CLIENTS.map((client) => (
+            <div key={client.name} className="relative h-20 w-full">
+              <Image
+                src={client.src}
+                alt={client.name}
+                fill
+                className="object-contain grayscale opacity-70"
+                sizes="160px"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
