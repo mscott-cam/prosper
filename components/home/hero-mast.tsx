@@ -104,7 +104,7 @@ export function HeroMast() {
             <Reveal as="div" delay={0.6} offset={28} className="relative">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-bone-warm shadow-[0_30px_80px_-40px_rgba(31,42,27,0.45)]">
                 <Image
-                  src="/images/hero-living-room.png"
+                  src="/images/hero-living-room.jpg"
                   alt="A curated downtown Austin office lounge with monstera and rubber plant"
                   fill
                   priority
